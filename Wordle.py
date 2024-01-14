@@ -17,6 +17,9 @@ def wordle_test(cw, lifes):
         if right == False:
             explanation = []
             gw = input("What's the word? ")
+            if len(gw) != len(cw):
+                print(f"What? The word I asked you for was {wlen} letters long!")
+                continue
             gl = list(gw)
             for y in range(wlen):
                 if gl[y] == cl[y]:
