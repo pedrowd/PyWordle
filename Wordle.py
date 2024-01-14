@@ -3,6 +3,13 @@ import random
 def wordle_test(cw, lifes):
     cl = list(cw)
     wlen = len(cw)
+    default_win = "Correct! You won!"
+    win = default_win
+    eggs = {
+        "backwards": "!now uoY !tcerroC",
+        "duck": "Quack quack! Youre - quack - right!",
+        "robot": "Beep-bop. You are correct."
+    }
     print("Hello! This is Pedro's Python Wordle!")
     print("I'll choose a word for you and then you have to guess what it is!")
     print("X means wrong place and letter, A means right letter but wrong")
@@ -32,10 +39,14 @@ def wordle_test(cw, lifes):
             print(result)
             if gw == cw:
                 right = True
-                print("Correct! You won!")
+                if cw in eggs:
+                    win = eggs[cw]
+                print(win)
 
 def random_wordle(pws, lifes):
     cw = random.choice(pws)
     wordle_test(cw, lifes)
 
-word_list = ["pedro", "frisk", "rocky", "mulan", "stone", "bread", "mouse", "pikachu", "group", "clean", "toothbrush", "chameleon", "charizard", "wolf", "nose", "hole", "duck"]
+word_list = ["pedro", "frisk", "rocky", "mulan", "stone", "bread", "mouse", "pikachu", "group", "clean", "toothbrush", "chameleon", "charizard", "wolf", "nose", "hole", "duck", "backwards", "robot"]
+word = input("Test Word is: ")
+wordle_test(word, 6)
