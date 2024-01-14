@@ -48,5 +48,3 @@ def random_wordle(pws, lifes):
     wordle_test(cw, lifes)
 
 word_list = ["pedro", "frisk", "rocky", "mulan", "stone", "bread", "mouse", "pikachu", "group", "clean", "toothbrush", "chameleon", "charizard", "wolf", "nose", "hole", "duck", "backwards", "robot"]
-word = input("Test Word is: ")
-wordle_test(word, 6)
